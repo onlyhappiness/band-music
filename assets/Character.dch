@@ -9,7 +9,7 @@
 },
 "default_portrait": "normal",
 "description": "",
-"display_name": "Character",
+"display_name": "{playerName}",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),

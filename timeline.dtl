@@ -1,22 +1,11 @@
 [background arg="res://icon.svg" fade="0.0"]
-Hello, world
+what's player name?
+[text_input text="playerName" var="playerName" placeholder="playerName" default="nerd"]
 Join Character 1
-Hello Character
-...
-....... ....... .......\
-\
-....... ....... .......\
-\
-....... ....... .......\
-\
-....... ....... .......\
-\
-....... ....... .......\
-\
-....... ....... ....... \
-\
-
-........
-Character (default): ....
-Character (default): ....
-Character (default): Hello Character
+Hello {playerName}
+My age is {age}
+test Question?
+- Yes
+	Yes!
+- No
+	No...
