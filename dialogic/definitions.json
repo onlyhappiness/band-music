@@ -1,0 +1,26 @@
+{
+	"glossary": [
+		{
+			"extra": "",
+			"id": "1691585081-648",
+			"name": "New glossary entry",
+			"text": "",
+			"title": "",
+			"type": 1
+		}
+	],
+	"variables": [
+		{
+			"id": "1691585084-787",
+			"name": "New value",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1691586176-366",
+			"name": "PlayerName",
+			"type": 0,
+			"value": "bread"
+		}
+	]
+}
