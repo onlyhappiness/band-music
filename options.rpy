@@ -146,7 +146,7 @@ define config.save_directory = "school_life-1696428261"
 ##
 ## 작업 표시 줄 또는 독에 표시되는 아이콘.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/window_icon.png"   # Window용
 
 
 ## 빌드 구성 #######################################################################
