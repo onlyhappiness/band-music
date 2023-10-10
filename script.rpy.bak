@@ -5,10 +5,12 @@ init:
     image Miso_teasing = "images/character/Miso/Teasing.png"
     
     define 주인공 = Character("[protagonist_name]", color="#ACA9BB")
+    define test = Character("김찐따", color="#ACA9BB")
+
     define 선생님 = Character('선생님', color="#a17fe0")
 
     define 하늘 = Character('박하늘', color="#77CFF2")
-    # define 미소 = Character('김미소', color="#F2A0B6")
+    define 미소 = Character('김미소', color="#F2A0B6")
     define 지현 = Character('이지현', color="#F28705")
 
     # 배경 이미지
@@ -32,9 +34,10 @@ init:
 # 여기에서부터 게임이 시작합니다.
 label start:
 
-    call first_day from _call_first_day
+    call first_day
 
-    하늘 "다음을 기대해줘!"
+
+    미소 "다음을 기대해줘!"
 
     return
 
@@ -42,7 +45,7 @@ label start:
 ## 첫날
 label first_day:
     ####################################
-    call get_player_name from _call_get_player_name
+    call get_player_name
 
     menu:
         "당신의 이름이 [protagonist_name]이(가) 맞나요?"
@@ -66,45 +69,45 @@ label first_day:
 
     # "딴 생각에 잠기다 보니, 갑자기 뒤에서 누군가의 손이 그의 어깨를 툭 치는 소리가 들려왔다."
 
-    하늘 "야! [protagonist_name]!"
+    미소 "야! [protagonist_name]!"
 
     scene bg goingToSchool with hpunch
     "[protagonist_name]은 목소리의 주인을 찾아본다."
 
-    하늘 "누구게~? 완전 딴 사람이 됐네?!"
+    미소 "누구게~? 완전 딴 사람이 됐네?!"
 
-    "[protagonist_name]은 놀라서 뒤를 돌아보니, 밝은 웃음으로 하늘이가 서 있었다."
+    "[protagonist_name]은 놀라서 뒤를 돌아보니, 밝은 웃음으로 미소가 서 있었다."
 
     show Miso with dissolve
-    하늘 "너 여기 학교로 전학왔어?!"
+    미소 "너 여기 학교로 전학왔어?!"
     scene black
     show Miso
 
-    "박하늘"
+    "김미소"
     "어린 시절 친하게 지낸 친구다."
-    "하늘이는 그 이름만큼이나 상쾌하고 밝은 에너지를 가진 친구이다."
+    "미소는 그 이름만큼이나 상쾌하고 밝은 에너지를 가진 친구이다."
     "어린 시절에는 늘 호기심과 즐거움으로 많았고, 밝게 웃는 그녀의 모습은 주변 사람들에게 기쁨을 전하는 친구였다."
-    "고등학생이 된 하늘의 길게 흘러내리는 분홍 머리는 그녀의 활발한 성격을 더욱 돋보이게 하는 것 같다."
+    "고등학생이 된 미소의 길게 흘러내리는 분홍 머리는 그녀의 활발한 성격을 더욱 돋보이게 하는 것 같다."
 
     scene bg goingToSchool
     show Miso
 
     주인공 "어.. 오랜만이야.."
-    주인공 "나.. 여기로 전학왔어.."
+    주인공 "나 여기로 전학왔어.."
 
-    하늘 "진짜? 그럼 우리 같은 학교 다니게 됐네! 대박!"
-    하늘 "그러면 여기서 멍 때리지말고 내가 학교 소개시켜줄게!"
+    미소 "진짜? 그럼 우리 같은 학교 다니게 됐네! 대박!"
+    미소 "그러면 여기서 멍 때리지말고 내가 학교 소개시켜줄게!"
 
     scene library with dissolve
-    하늘 "이쪽은 도서관이고"
+    미소 "이쪽은 도서관이고"
     scene playground with dissolve
-    하늘 "저쪽은 운동장이야."
+    미소 "저쪽은 운동장이야."
 
     scene bg goingToSchool
     show Miso 
-    하늘 "중요한 건 우리 반이야! 같이 가자."
+    미소 "중요한 건 우리 반이야! 같이 가자."
 
-    call introduce_teacher from _call_introduce_teacher
+    call introduce_teacher
 
     return
 
@@ -123,37 +126,37 @@ label get_player_name:
 #
 label introduce_teacher:
     scene school_hallway with dissolve
-    "하늘은 [protagonist_name](와)과 학교 복도를 돌아다니다가 갑자기 멈춰 섰다."
+    "미소는 [protagonist_name](와)과 학교 복도를 돌아다니다가 갑자기 멈춰 섰다."
 
     show Miso with dissolve
-    하늘 "아! 맞다!"
+    미소 "아! 맞다!"
 
     주인공 "왜..? 무슨 일 있어..?"
 
     show Miso_teasing
-    하늘 "아, 양호 선생님... 아니 담임선생님께 너 소개해줘야 하는데! 깜빡하고 있었어!"
+    미소 "아, 양호 선생님... 아니 담임선생님께 너 소개해줘야 하는데! 깜빡하고 있었어!"
 
     주인공 "아.. 그럼.. 나 혼자 갈게"
 
     scene bg school_hallway with hpunch
     show Miso 
 
-    하늘 "어림도 없지!"
-    하늘 "같이 가자!"
-    하늘 "선생님도 기다리고 있을테니까 빨리가자!"
+    미소 "어림도 없지!"
+    미소 "같이 가자!"
+    미소 "선생님도 기다리고 있을테니까 빨리가자!"
 
     scene bg teacher_room with dissolve
-    하늘 "선생님이 여기 계시겠지?"
+    미소 "선생님이 여기 계시겠지?"
 
-    "두 사람은 교무실 앞에 도착하자, 하늘은 문을 똑똑 두드렸다."
+    "두 사람은 교무실 앞에 도착하자, 미소는 문을 똑똑 두드렸다."
 
     # 캐릭터 이미지 삽입
 
-    하늘 "선생님, 죄송해요! 전학생 소개하는 걸 깜빡하고 있었어요!"
+    미소 "선생님, 죄송해요! 전학생 소개하는 걸 깜빡하고 있었어요!"
 
-    "문이 열리자, 친절하게 하늘 짓는 선생님이 나타났다."
+    "문이 열리자, 친절하게 미소 짓는 선생님이 나타났다."
 
-    선생님 "괜찮아, 하늘아."
+    선생님 "괜찮아, 미소야."
     선생님 "그럼 이 친구가 [protagonist_name]이구나. 환영해, [protagonist_name]아"
 
     주인공 "안녕하세요.. 선생님.."

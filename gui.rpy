@@ -25,7 +25,7 @@ define config.check_conflicting_properties = True
 ## 인터페이스에서 글자의 색상입니다.
 
 ## 강조 색상은 레이블(label)과 강조된 글자로 인터페이스 전체에서 사용됩니다.
-define gui.accent_color = '#003366'
+define gui.accent_color = '#cc0066'
 
 ## 텍스트 버튼(text button)이 선택(selected)됐거나 커서를 올리지(hovered) 않았을
 ## 때 사용됩니다.
@@ -36,7 +36,7 @@ define gui.idle_color = '#707070'
 define gui.idle_small_color = '#606060'
 
 ## 버튼(button)과 막대(bar)에 커서를 올렸을 때(hovered) 사용됩니다.
-define gui.hover_color = '#003366'
+define gui.hover_color = '#cc0066'
 
 ## 텍스트 버튼(text button)에 선택됐지만(selected) 포커스되지(focused) 않았을 때
 ## 사용됩니다. 버튼(button)은 현재 화면이거나 설정값인 경우 선택됨(selected)이
@@ -48,8 +48,8 @@ define gui.insensitive_color = '#7070707f'
 
 ## 채워지지 않은 빈 막대(bar)에 사용됩니다. 이것은 바로 사용되지 않지만, 막대
 ## (bar) 이미지 파일이 재생성됐을 때 사용됩니다.
-define gui.muted_color = '#6684a3'
-define gui.hover_muted_color = '#99adc1'
+define gui.muted_color = '#e066a3'
+define gui.hover_muted_color = '#ea99c1'
 
 ## 대사(dialogue)와 선택지(menu choice)의 글자에서 사용됩니다.
 define gui.text_color = '#404040'
@@ -90,6 +90,7 @@ define gui.title_text_size = 75
 
 ## 이미지들은 메인(main)과 게임 메뉴(game menu)에 사용됩니다.
 define gui.main_menu_background = "gui/main_menu.png"
+# define gui.main_menu_background = Movie(play="gui/test.webm")
 define gui.game_menu_background = "gui/game_menu.png"
 
 

@@ -17,7 +17,9 @@ define config.name = _("school_life")
 ## 위에 주어진 제목이 주 메뉴 화면에 표시되는지 결정합니다. 제목을 숨기려면 이것
 ## 을 False로 설정하십시오.
 
-define gui.show_name = True
+# define gui.show_name = True
+define gui.show_name = False
+
 
 
 ## 게임의 버전입니다.
@@ -139,14 +141,14 @@ default preferences.afm_time = 15
 ## 이것은 일반적으로 변경해서는 안 되며, 항상 표현형식이 아닌 정확한 문자열이어
 ## 야 합니다.
 
-define config.save_directory = "school_life-1696428261"
+define config.save_directory = "school_life-1696695501"
 
 
 ## Icon ########################################################################
 ##
 ## 작업 표시 줄 또는 독에 표시되는 아이콘.
 
-define config.window_icon = "gui/window_icon.png"   # Window용
+define config.window_icon = "gui/window_icon.png"
 
 
 ## 빌드 구성 #######################################################################

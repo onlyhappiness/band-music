@@ -5,6 +5,7 @@
 init offset = -1
 
 
+
 ################################################################################
 ## 스타일
 ################################################################################
@@ -288,7 +289,8 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
+        # xalign 0.5
+        yalign 0.8        
 
         spacing gui.navigation_spacing
 
@@ -314,7 +316,7 @@ screen navigation():
 
             textbutton _("메인 메뉴") action MainMenu()
 
-        textbutton _("버전정보") action ShowMenu("about")
+        # textbutton _("버전정보") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -337,7 +339,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-
+    xalign 0.5
 
 ## Main Menu 스크린 ###############################################################
 ##
@@ -345,12 +347,25 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform logo_slide_down:
+    yalign 0.0 # 시작 위치를 화면의 상단으로 설정
+    linear 0.5 yalign 0.2 # 0.5초 동안 화면의 중앙까지 아래로 내려옵니다.
+
+
 screen main_menu():
 
     ## 이렇게 하면 다른 메뉴 화면이 모두 교체됩니다.
     tag menu
 
     add gui.main_menu_background
+
+    # 로고 이미지 추가
+    add "logo.png" at logo_slide_down:
+        xalign(0.9)
+        # pos (800, 800) # (x, y) 좌표로 위치를 정합니다.
+        # 위치 및 크기 조정 (원하는대로 조절)
+        # size (400, 300) # 로고 이미지 크기를 조절합니다.
+
 
     ## 이 빈 프레임은 기본 메뉴를 어둡게 만듭니다.
     frame:
