@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/player.rpy", line 12: expected ':' not found.
+    label get_player_name
+                         ^
+
+Ren'Py Version: Ren'Py 8.3.3.24111502
+Wed Dec 25 22:44:25 2024

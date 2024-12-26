@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 88, in script
-    e "종료"
+  File "game/script.rpy", line 69, in script
+    e "또 기다릴게!"
 Exception: Sayer 'e' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 88, in script
-    e "종료"
+  File "game/script.rpy", line 69, in script
+    e "또 기다릴게!"
   File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
     Say.execute(self)
   File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 575, in execute
@@ -21,4 +21,4 @@ Exception: Sayer 'e' is not defined.
 macOS-14.2-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 밴드 음악 좋아하세요? 1.0
-Thu Dec 19 22:09:40 2024
+Wed Dec 25 22:48:22 2024
