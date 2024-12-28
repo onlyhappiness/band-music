@@ -1,24 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 69, in script
-    e "또 기다릴게!"
-Exception: Sayer 'e' is not defined.
+  File "game/part1.rpy", line 89, in script
+    tg "{cps=40}그런 거에 신경쓰지 않고 이 세계를 구하기 위한 [용사] 역할이어서 열심히 해야하는 부분인데{/cps}"
+NameError: name '용사' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 69, in script
-    e "또 기다릴게!"
+  File "game/part1.rpy", line 89, in script
+    tg "{cps=40}그런 거에 신경쓰지 않고 이 세계를 구하기 위한 [용사] 역할이어서 열심히 해야하는 부분인데{/cps}"
   File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
     Say.execute(self)
-  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'e' is not defined.
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/character.py", line 1440, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/character.py", line 1354, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/character.py", line 1334, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/substitutions.py", line 86, in interpolate
+    raise e
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name '용사' is not defined
 
 macOS-14.2-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 밴드 음악 좋아하세요? 1.0
-Wed Dec 25 22:48:22 2024
+Sat Dec 28 00:54:24 2024

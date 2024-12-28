@@ -1,4 +1,7 @@
 .DS_Store
 .vscode
 
+game/cache/*
+game/saves/*
+
 log.txt

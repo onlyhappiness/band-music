@@ -46,6 +46,10 @@ init python:
     config.custom_text_tags["gold"] = gold_tag
     config.custom_text_tags["auto"] = autograph_tag
 
+image bg quit_bg = 'images/bg/quit_bg.png'
+
+define flash = Fade(.01, 0.0, .18, color="#ffffff")
+
 
 # 게임에서 사용할 캐릭터를 정의합니다.
 define p = Character("[protagonist_name]", color="#ffffff")
@@ -57,7 +61,6 @@ define n = Character('누리', color="#ffffff")
 define tg = Character('태구', color="#ffffff")
 
 
-
 default loadVersion = "0.1"
 
 # 여기에서부터 게임이 시작합니다.
@@ -67,6 +70,8 @@ label start:
     jump init_player_name
 
 label quit:
+    scene bg quit_bg with fade
+
     show text _("{size=65}")
     c "{cps=10}또.. 기다릴게..!{/cps}"
     return
