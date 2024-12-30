@@ -35,7 +35,7 @@ define gui.about = _p("""
 ## 배포판의 실행 파일과 디렉토리에 사용되는 게임의 약식 이름. 이것은 ASCII 전용
 ## 이어야 하며 공백, 콜론 또는 세미콜론을 포함해서는 안 됩니다.
 
-define build.name = "test"
+define build.name = "밴드음악좋아하세요?"
 
 
 ## 음악과 음향 ######################################################################
@@ -59,7 +59,7 @@ define config.has_voice = True
 ## 처리를 제거하십시오. 이 파일은 중지되거나 다른 파일이 재생 될 때까지 계속 재
 ## 생합니다.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/bgm/start.ogg"
 
 
 ## 번역 ##########################################################################

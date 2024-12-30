@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/part1.rpy", line 41: end of line expected.
-    p "{cps=20}안녕! 내 이름은 [p]야. 잘 부탁해!{/cps}":
-                                            ^
-
-File "game/part1.rpy", line 43: end of line expected.
-    p "{cps=20}안녕.. 나는 [p] 라고 해.. 앞으로 잘 부탁해..{/cps}":
-                                                    ^
-
-File "game/part1.rpy", line 45: end of line expected.
-    p "{cps=20}...{/cps}":
-                         ^
+File "game/part1.rpy", line 131: expected statement.
+    window black
+          ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Fri Dec 27 21:53:48 2024
+Sat Dec 28 17:52:18 2024

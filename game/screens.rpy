@@ -251,9 +251,9 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("되감기") action Rollback()
+            textbutton _("되감기") action Rollback() 
             textbutton _("대사록") action ShowMenu('history')
-            textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("자동진행") action Preference("auto-forward", "toggle")
             textbutton _("저장하기") action ShowMenu('save')
             textbutton _("Q.저장하기") action QuickSave()
@@ -1516,8 +1516,8 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("되감기") action Rollback()
-            textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("되감기") action Rollback() # 괘씸해서 주석
+            # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("자동진행") action Preference("auto-forward", "toggle")
             textbutton _("메뉴") action ShowMenu()
 
