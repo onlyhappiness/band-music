@@ -1,24 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 76, in script
-    c "{cps=10}또.. 기다릴게..!{/cps}"
-Exception: Sayer 'c' is not defined.
+  File "game/part1.rpy", line 263, in script
+    jump develop
+ScriptError: could not find label 'develop'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 76, in script
-    c "{cps=10}또.. 기다릴게..!{/cps}"
-  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
-    Say.execute(self)
-  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'c' is not defined.
+  File "game/part1.rpy", line 263, in script
+    jump develop
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/bread/Downloads/renpy-8.3.3-sdk/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'develop'.
 
 macOS-14.2-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 밴드 음악 좋아하세요? 1.0
-Sat Dec 28 23:29:05 2024
+Sun Jan  5 03:12:17 2025

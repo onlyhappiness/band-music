@@ -52,9 +52,9 @@ define flash = Fade(.01, 0.0, .18, color="#ffffff")
 
 
 # 게임에서 사용할 캐릭터를 정의합니다.
-define p = Character("[protagonist_name]", color="#ffffff")
+define p = Character("[protagonist_name]", color="#000000")
 
-define t = Character('선생님', color="#ffffff")
+define t = Character('선생님', color="#000000")
 define y = Character('예나', color="#F8BBD0")
 define s = Character('수연', color="#4682B4")
 define n = Character('누리', color="#F0D59C")
@@ -67,12 +67,14 @@ default loadVersion = "0.1"
 label start:
     $ loadVersion = "0.1"
 
-    jump init_player_name
+    # jump init_player_name
     # jump develop_intro
+    jump test
 
-label quit:
-    stop music 
-    scene bg quit_bg with fade
-    y "{cps=10}또.. 기다릴게..!{/cps}"
-    return
+
+# label quit:
+#     stop music 
+#     scene bg quit_bg with fade
+#     y "{cps=10}또.. 기다릴게..!{/cps}"
+#     return
 

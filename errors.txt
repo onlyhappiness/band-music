@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/part1.rpy", line 131: expected statement.
-    window black
-          ^
+File "game/test.rpy", line 7: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    color "#ffffff"
+                   ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Sat Dec 28 17:52:18 2024
+Sun Jan  5 00:07:07 2025
