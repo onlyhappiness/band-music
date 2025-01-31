@@ -46,7 +46,7 @@ init python:
     config.custom_text_tags["gold"] = gold_tag
     config.custom_text_tags["auto"] = autograph_tag
 
-image bg quit_bg = 'images/bg/quit_bg.png'
+# image bg quit_bg = 'images/bg/quit_bg.png'
 
 define flash = Fade(.01, 0.0, .18, color="#ffffff")
 

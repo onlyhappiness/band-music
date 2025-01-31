@@ -109,9 +109,9 @@ define gui.textbox_yalign = 1.0
 
 ## 말하는 캐릭터의 이름을 텍스트 박스를 기준으로 배치합니다. 이것은 좌측이나 최
 ## 상단으로부터 전체 픽셀값의 숫자가 되거나, 0.5로 중앙이 될 수 있습니다.
-define gui.name_xpos = 240
+define gui.name_xpos = 140
 # define gui.name_ypos = 0
-define gui.name_ypos = -20
+define gui.name_ypos = 60
 
 ## 캐릭터들의 이름을 수평으로 정렬합니다. 이것은 0.0으로 좌측 정렬, 0.5로 중앙,
 ## 그리고 1.0으로 우측 정렬될 수 있습니다.
@@ -119,10 +119,10 @@ define gui.name_xalign = 0.5
 
 ## 캐릭터들의 이름이 들어 있는 박스의 너비, 높이, 그리고 테두리입니다. 혹은 그것
 ## 을 None으로 자동 설정할 수 있습니다.
-# define gui.namebox_width = None
-# define gui.namebox_height = None
-define gui.namebox_width = 200
-define gui.namebox_height = 60
+define gui.namebox_width = None
+define gui.namebox_height = None
+# define gui.namebox_width = 200
+# define gui.namebox_height = 60
 
 ## 캐릭터의 이름이 들어 있는 박스의 테두리를 좌측, 상단, 우측, 하단의 순서로 정
 ## 합니다.

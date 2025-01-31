@@ -263,8 +263,8 @@ screen quick_menu():
 
 ## 플레이어가 UI(스크린)을 일부러 숨기지 않는 한 퀵메뉴가 게임 내에 오버레이로
 ## 출력되게 합니다.
-init python:
-    config.overlay_screens.append("quick_menu")
+# init python:
+#     config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
 
@@ -289,48 +289,41 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
+        xalign 0.5
+        yalign 0.9
+        spacing 100  # 버튼 사이의 간격을 30픽셀로 설정
 
         if main_menu:
 
-            textbutton _("시작하기") action Start()
+            textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 
+            # textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#99ccff" text_size 28 text_font "SourceHanSansLite.ttf"
 
         else:
 
-            textbutton _("대사록") action ShowMenu("history")
+            textbutton _("대사록") action ShowMenu("history") text_color "#fff" text_hover_color "#60dfff" text_size 28
 
-            textbutton _("저장하기") action ShowMenu("save")
+            textbutton _("저장하기") action ShowMenu("save") text_color "#fff" text_hover_color "#60dfff" text_size 28
 
-        textbutton _("불러오기") action ShowMenu("load")
+        textbutton _("불러오기") action ShowMenu("load") text_color "#fff" text_hover_color "#60dfff" text_size 28
 
-        textbutton _("옵션") action ShowMenu("preferences")
+        textbutton _("환경설정") action ShowMenu("preferences") text_color "#fff" text_hover_color "#60dfff" text_size 28
 
         if _in_replay:
 
-            textbutton _("리플레이 끝내기") action EndReplay(confirm=True)
+            textbutton _("리플레이 끝내기") action EndReplay(confirm=True) text_color "#fff" text_hover_color "#60dfff" text_size 28
 
         elif not main_menu:
 
-            textbutton _("메인 메뉴") action MainMenu()
-
-        # textbutton _("버전정보") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## 도움말 메뉴는 모바일 디바이스와 맞지 않아 불필요합니다.
-            textbutton _("조작방법") action ShowMenu("help")
+            textbutton _("메인 메뉴") action MainMenu() text_color "#fff" text_hover_color "#60dfff" text_size 28
 
         if renpy.variant("pc"):
 
             ## iOS에서는 종료 버튼이 금지되어 있으며 Android 및 웹에서는 불필요
             ## 합니다.
-            textbutton _("종료하기") action Quit(confirm=not main_menu)
+            textbutton _("게임종료") action Quit(confirm=not main_menu) text_color "#fff" text_hover_color "#60dfff" text_size 28
 
 
 style navigation_button is gui_button
@@ -387,7 +380,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -472,7 +465,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    use navigation
+    # use navigation
+
+
 
     textbutton _("돌아가기"):
         style "return_button"
@@ -662,11 +657,11 @@ screen file_slots(title):
                     textbutton _("<") action FilePagePrevious()
                     key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}자동") action FilePage("auto")
+                    # if config.has_autosave:
+                    #     textbutton _("{#auto_page}자동") action FilePage("auto")
 
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}퀵") action FilePage("quick")
+                    # if config.has_quicksave:
+                    #     textbutton _("{#quick_page}퀵") action FilePage("quick")
 
                     ## 범위(1, 10)는 1부터 9까지 숫자를 제공합니다.
                     for page in range(1, 10):
@@ -675,15 +670,15 @@ screen file_slots(title):
                     textbutton _(">") action FilePageNext()
                     key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("동기화 업로드"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("동기화 다운로드"):
-                            action DownloadSync()
-                            xalign 0.5
+                # if config.has_sync:
+                #     if CurrentScreenName() == "save":
+                #         textbutton _("동기화 업로드"):
+                #             action UploadSync()
+                #             xalign 0.5
+                #     else:
+                #         textbutton _("동기화 다운로드"):
+                #             action DownloadSync()
+                #             xalign 0.5
 
 
 style page_label is gui_label
@@ -1158,13 +1153,15 @@ screen confirm(message, yes_action, no_action):
             label _(message):
                 style "confirm_prompt"
                 xalign 0.5
+                text_size 26
+                text_color "#000000"
 
             hbox:
                 xalign 0.5
                 spacing 100
 
-                textbutton _("네") action yes_action
-                textbutton _("아니오") action no_action
+                textbutton _("네") action yes_action text_hover_color '#000000'
+                textbutton _("아니오") action no_action text_hover_color '#000000'
 
     ## 우클릭과 esc는 '아니오'를 입력하는 것과 같습니다.
     key "game_menu" action no_action
@@ -1503,23 +1500,23 @@ style pref_vbox:
 
 ## 마우스가 없고 화면이 작을 가능성이 높으므로, 퀵메뉴 버튼의 크기를 키우고 가짓
 ## 수를 줄입니다.
-screen quick_menu():
-    variant "touch"
+# screen quick_menu():
+#     variant "touch"
 
-    zorder 100
+#     zorder 100
 
-    if quick_menu:
+#     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+#         hbox:
+#             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+#             xalign 0.5
+#             yalign 1.0
 
-            textbutton _("되감기") action Rollback() # 괘씸해서 주석
-            # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("자동진행") action Preference("auto-forward", "toggle")
-            textbutton _("메뉴") action ShowMenu()
+#             textbutton _("되감기") action Rollback() # 괘씸해서 주석
+#             # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
+#             textbutton _("자동진행") action Preference("auto-forward", "toggle")
+#             textbutton _("메뉴") action ShowMenu()
 
 
 style window:

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/test.rpy", line 7: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    color "#ffffff"
-                   ^
+File "game/screens.rpy", line 301: 'text_semibold' is not a keyword argument or valid child of the textbutton statement.
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 text_font "SourceHanSansLite.ttf" text_semibold True
+                                                                                                                                                 ^
 
-Ren'Py Version: Ren'Py 8.3.3.24111502
-Sun Jan  5 00:07:07 2025
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Fri Jan 31 23:09:35 2025
