@@ -1,19 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 548, in script
-    python hide:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 548, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 548, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 559, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+After initialization, but before game start.
+  File "game/screens.rpy", line 290, in prepare_screen
+    screen navigation():
+  File "game/screens.rpy", line 290, in prepare
+    screen navigation():
+  File "game/screens.rpy", line 292, in prepare
+    hbox:
+  File "game/screens.rpy", line 292, in prepare
+    hbox:
+  File "game/screens.rpy", line 299, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 299, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 301, in prepare
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+  File "game/screens.rpy", line 301, in prepare
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+  File "game/screens.rpy", line 301, in <module>
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+TypeError: __init__() got multiple values for argument 'left'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -22,38 +28,33 @@ Full traceback:
     renpy.main.main()
   File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/main.py", line 652, in main
     run(restart)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/execution.py", line 958, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 548, in script
-    python hide:
-  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 548, in script
-    python hide:
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 548, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 559, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/loadsave.py", line 838, in load
-    log.unfreeze(roots, label="_after_load")
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/rollback.py", line 1135, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/rollback.py", line 930, in rollback
-    self.load_failed()
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/rollback.py", line 848, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 1024, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 290, in prepare_screen
+    screen navigation():
+  File "game/screens.rpy", line 290, in prepare
+    screen navigation():
+  File "game/screens.rpy", line 292, in prepare
+    hbox:
+  File "game/screens.rpy", line 292, in prepare
+    hbox:
+  File "game/screens.rpy", line 299, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 299, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 301, in prepare
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+  File "game/screens.rpy", line 301, in prepare
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 301, in <module>
+    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
+TypeError: __init__() got multiple values for argument 'left'
 
 macOS-14.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 밴드 음악 좋아하세요? 1.0
-Fri Jan 31 23:16:44 2025
+Sun Feb  2 16:39:08 2025

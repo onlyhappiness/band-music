@@ -22,7 +22,7 @@ label get_player_name:
 
             # 이름이 맞을 경우 본격적인 게임 시작 
             jump start_part_1
-            # jump yuna_part_1
+            # jump daeun_part_1
         
         "아니, 다시 알려줄게.":
             jump init_player_name

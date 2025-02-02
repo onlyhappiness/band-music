@@ -263,8 +263,8 @@ screen quick_menu():
 
 ## 플레이어가 UI(스크린)을 일부러 숨기지 않는 한 퀵메뉴가 게임 내에 오버레이로
 ## 출력되게 합니다.
-# init python:
-#     config.overlay_screens.append("quick_menu")
+init python:
+    config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
 
@@ -287,44 +287,53 @@ style quick_button_text:
 ## 이 스크린은 메인메뉴와 게임외 메뉴에 포함되어 다른 메뉴로 이동하거나 게임을
 ## 시작/종료할 수 있게 합니다.
 
+style start_button:
+    background Frame("gui/button/title_background.png", 250, 100)
+    hover_background Frame("gui/button/title_background_hover.png", 250, 100)
+    xsize 250
+    ysize 100
+
+style start_button_text:
+    color "#fff"
+    size 32
+    xalign 0.5
+    yalign 0.5
+    font "font/BMJUA.ttf"
+
 screen navigation():
 
     hbox:
-        style_prefix "navigation"
+        # style_prefix "navigation"
 
         xalign 0.5
         yalign 0.9
-        spacing 100  # 버튼 사이의 간격을 30픽셀로 설정
+        spacing 40  # 버튼 사이의 간격을 30픽셀로 설정
 
         if main_menu:
-
-            textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 
-            # textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#99ccff" text_size 28 text_font "SourceHanSansLite.ttf"
+            textbutton _("시작하기") action Start() style "start_button"
 
         else:
 
-            textbutton _("대사록") action ShowMenu("history") text_color "#fff" text_hover_color "#60dfff" text_size 28
+            textbutton _("대사록") action ShowMenu("history")
 
-            textbutton _("저장하기") action ShowMenu("save") text_color "#fff" text_hover_color "#60dfff" text_size 28
+            textbutton _("저장하기") action ShowMenu("save")
 
-        textbutton _("불러오기") action ShowMenu("load") text_color "#fff" text_hover_color "#60dfff" text_size 28
+        textbutton _("불러오기") action ShowMenu("load") style "start_button"
 
-        textbutton _("환경설정") action ShowMenu("preferences") text_color "#fff" text_hover_color "#60dfff" text_size 28
+        textbutton _("환경설정") action ShowMenu("preferences") style "start_button"
 
         if _in_replay:
-
-            textbutton _("리플레이 끝내기") action EndReplay(confirm=True) text_color "#fff" text_hover_color "#60dfff" text_size 28
+            textbutton _("리플레이 끝내기") action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("메인 메뉴") action MainMenu() text_color "#fff" text_hover_color "#60dfff" text_size 28
+            textbutton _("메인 메뉴") action MainMenu()
 
         if renpy.variant("pc"):
 
             ## iOS에서는 종료 버튼이 금지되어 있으며 Android 및 웹에서는 불필요
             ## 합니다.
-            textbutton _("게임종료") action Quit(confirm=not main_menu) text_color "#fff" text_hover_color "#60dfff" text_size 28
-
+            textbutton _("게임종료") action Quit(confirm=not main_menu) style "start_button"
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
