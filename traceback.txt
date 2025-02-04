@@ -1,60 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens.rpy", line 290, in prepare_screen
-    screen navigation():
-  File "game/screens.rpy", line 290, in prepare
-    screen navigation():
-  File "game/screens.rpy", line 292, in prepare
-    hbox:
-  File "game/screens.rpy", line 292, in prepare
-    hbox:
-  File "game/screens.rpy", line 299, in prepare
-    if main_menu:
-  File "game/screens.rpy", line 299, in prepare
-    if main_menu:
-  File "game/screens.rpy", line 301, in prepare
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-  File "game/screens.rpy", line 301, in prepare
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-  File "game/screens.rpy", line 301, in <module>
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-TypeError: __init__() got multiple values for argument 'left'
+While running game code:
+  File "game/part1.rpy", line 46, in script
+    window show "어떻게 소개할까..."
+  File "renpy/common/000window.rpy", line 180, in execute_window_show
+    _window_show(trans)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/main.py", line 652, in main
-    run(restart)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/screen.py", line 1024, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens.rpy", line 290, in prepare_screen
-    screen navigation():
-  File "game/screens.rpy", line 290, in prepare
-    screen navigation():
-  File "game/screens.rpy", line 292, in prepare
-    hbox:
-  File "game/screens.rpy", line 292, in prepare
-    hbox:
-  File "game/screens.rpy", line 299, in prepare
-    if main_menu:
-  File "game/screens.rpy", line 299, in prepare
-    if main_menu:
-  File "game/screens.rpy", line 301, in prepare
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-  File "game/screens.rpy", line 301, in prepare
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 301, in <module>
-    textbutton _("시작하기") action Start() text_color "#fff" text_hover_color "#60dfff" text_size 28 background Frame("gui/button/title_background.png", 500, 100, left=20, right=20, top=10, bottom=10)
-TypeError: __init__() got multiple values for argument 'left'
+  File "game/part1.rpy", line 46, in script
+    window show "어떻게 소개할까..."
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1980, in execute
+    self.call("execute")
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/ast.py", line 1959, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000window.rpy", line 180, in execute_window_show
+    _window_show(trans)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/exports/statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 1578, in do_with
+    return self.interact(trans_pause=True,
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2666, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "/Users/bread/Downloads/renpy-8.3.4-sdk/renpy/display/core.py", line 2575, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+TypeError: 'str' object is not callable
 
 macOS-14.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 밴드 음악 좋아하세요? 1.0
-Sun Feb  2 16:39:08 2025
+Sun Feb  2 21:36:48 2025
