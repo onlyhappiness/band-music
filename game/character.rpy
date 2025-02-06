@@ -2,10 +2,18 @@
 # 2 - 무표정
 # 3 - 웃음
 # 4 - 놀람
+# 5 - 화남
+# 6 - 당황
 
 # 예나
 image yena_1 = 'images/Yena/1.png'
 image yena_2 = 'images/Yena/2.png'
+image yena_3 = 'images/Yena/3.png'
+image yena_4 = 'images/Yena/4.png'
+image yena_5 = 'images/Yena/5.png'
+image yena_6 = 'images/Yena/6.png'
+
+image yena_a = 'images/Yena/a.png'
 
 
 # 선생님

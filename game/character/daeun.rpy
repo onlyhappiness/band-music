@@ -55,8 +55,8 @@ label daeun_part_1:
 
     p "......"
     hide daeun_1
-    show daeun_2 at center with dissolve
-    pause 2
+    show daeun_2 at center 
+    pause 0.7
     de "......"
     "잠시 어색한 침묵."
     "그러나 다은은 침묵을 어색해지지 않고 조용히 책상에 손을 얹으며 말을 이어가려고 한다."
@@ -65,15 +65,17 @@ label daeun_part_1:
     "그녀의 시선이 자연스럽게 내 손끝으로 향한다."
     "책상 모서리를 무의식적으로 '톡톡' 두드리고 있던 내 손가락."
     hide daeun_1
-    show daeun_4 at center with dissolve
+    show daeun_4 at center 
+    pause 0.7
+    de "..."
     de "...혹시 리듬 타고 있었어?"
     "나는 움찔하며 손을 움켜쥐었다."
     p "그냥... 습관이야."
     de "아, 그래? 나는 펜돌리는 습관이 있어서."
     de "괜히 손이 가만히 있질 못하거든."
     hide daeun_4
-    show daeun_1 at center with dissolve
-    pause 1.5
+    show daeun_1 at center 
+    pause 0.7
     "다은은 대수롭지 않게 웃으며 넘긴다."
     "그 웃음은 억지로 친한 척하려는 게 아닌, 편안한 분위기를 만들려는 듯한 느낌이 들었다."
 
@@ -99,7 +101,8 @@ label daeun_part_1A:
     de "반장이라서 그런가봐. 그냥 익숙해진 것 같아."
     de "불편했다면 미안..."
     "다은은 잠시 창밖을 바라보다가 작게 웃으며 말을 덧붙였다."
-    hide daeun_2
+    hide daeun_2 
+    pause 0.3
     show daeun_1 at center with dissolve
     de "혹시 나중에 도움이 필요하면 꼭 말해줘."
     "다은은 마지막으로 부드럽게 인사를 하고 자리로 돌아갔다."
@@ -111,7 +114,7 @@ label daeun_part_1A:
 # 선택지 긍정
 label daeun_part_1A_1:
     hide daeun_1
-    show daeun_2 at center with dissolve
+    show daeun_2 at center 
     de "그냥 말 안하면, 더 낯설잖아..."
     de "난 전학 왔을 때 아무도 말 안 걸어줬거든... 그때 진짜 외로웠어."
     hide daeun_2
@@ -125,12 +128,15 @@ label daeun_part_1A_1:
             p "... 고마워."
             hide daeun_1
             show daeun_3 at center with dissolve
-
+            pause 0.3
         "(고개를 끄덕이며 조용히 미소를 짓는다.)":
             "(고개를 끄덕이며 조용히 미소를 짓는다.)"
 
     de "별거 아니야. 그냥 같은 반이니까 그런거지."
     de "혹시 나중에 도움이 필요하면 꼭 말해줘. 반장 특권으로 도와줄테니까."
+    hide daeun_3
+    show daeun_1 at center with dissolve
+    pause 0.3
     "다은은 마지막으로 부드럽게 인사를 하고 자리로 돌아갔다."
     jump yena_part_1
 
