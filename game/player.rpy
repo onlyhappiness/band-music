@@ -2,9 +2,7 @@ image bg playerInput = 'images/bg/init_player.png'
 
 # 플레이어 이름 정의
 label init_player_name:
-
     stop music fadeout 1
-
     # 플레이어 이름 입력 화면
     scene bg playerInput with fade
 
@@ -19,10 +17,6 @@ label get_player_name:
         "너의 이름이 [protagonist_name] 이(가) 맞지?"
         "응, 맞아.":
             "[protagonist_name] (으)로 게임을 계속 시작합니다."
-
-            # 이름이 맞을 경우 본격적인 게임 시작 
-            jump start_part_1
-            # jump daeun_part_1
-        
+            jump start_part_1        
         "아니, 다시 알려줄게.":
             jump init_player_name
