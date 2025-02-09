@@ -1,10 +1,54 @@
+# macOS-related files
+.vscode/
 .DS_Store
-.vscode
+.AppleDouble
+.LSOverride
 
-game/cache/*
-game/saves/*
+# Windows-related files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
 
-*.txt
+# Python related files.
+*.pyc
+*.pyo
+*.egg-info
+
+# Editor/tool files.
+*~
+*.bak
+.gdb_history
+
+# Compiled Ren'Py files.
 *.rpyc
+*.rpyb
+*.rpymc
+
+# Ren'Py log files.
+log.txt
+errors.txt
+traceback.txt
+lint.txt
+
+# Created directories.
+saves/
+tmp/
+cache/
+/game/images/
+/game/character/
+/game/audio/
+
+# Executables.
+*.exe
+*.app
+*.dmg
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
 
 
+/game/develop.rpy
+/game/test.rpy
