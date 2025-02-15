@@ -2,9 +2,8 @@
 label start:
     $ loadVersion = "0.1"
 
-    jump init_player_name
     # jump test
-
+    jump init_player_name
 
 # label quit:
 #     stop music 

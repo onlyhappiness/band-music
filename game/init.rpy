@@ -38,6 +38,29 @@ init python:
             ] + contents + [
                 (renpy.TEXT_TAG, u"/font"),
             ]
+    
+    def get_josa(name, josa_type):
+        """
+        한글 조사 처리 함수
+        """
+        JOSA_PAIRS = {
+            '은는': ('은', '는'),
+            '이가': ('이', '가'),
+            '을를': ('을', '를'),
+            '과와': ('과', '와')
+        }
+
+        if not name or not isinstance(name, str):
+            return ""
+        
+        # 한글의 유니코드 범위 내에서 받침 확인
+        code = ord(name[-1]) - 0xAC00
+
+        if code < 0 or code > 11172:
+            return JOSA_PAIRS[josa_type][1]  # 한글이 아닌 경우 받침 없는 것으로 처리
+            
+        has_final = bool(code % 28)
+        return JOSA_PAIRS[josa_type][0] if has_final else JOSA_PAIRS[josa_type][1]    
 
     config.custom_text_tags["red"] = red_tag
     config.custom_text_tags["blue"] = blue_tag

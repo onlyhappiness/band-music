@@ -1,7 +1,6 @@
 # 배경 이미지
 image bg intro = 'images/bg/intro_bg.png'
 
-
 # 시작 파트 1
 image bg school_gate = 'images/bg/start_part_1.png'
 

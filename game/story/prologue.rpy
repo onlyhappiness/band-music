@@ -13,10 +13,12 @@ label init_player_name:
     jump get_player_name  # 이름 입력 후 get_player_name으로 이동
 
 label get_player_name:
+    $ josa = get_josa(protagonist_name, '이가')
     menu:
-        "너의 이름이 [protagonist_name] 이(가) 맞지?"
+        "너의 이름이 [protagonist_name][josa] 맞지?"
         "응, 맞아.":
-            "[protagonist_name] (으)로 게임을 계속 시작합니다."
-            jump start_part_1        
+            $ josa = get_josa(protagonist_name, '으로')
+            "[protagonist_name][josa] 게임을 계속 시작합니다."
+            jump chapter1_start        
         "아니, 다시 알려줄게.":
             jump init_player_name

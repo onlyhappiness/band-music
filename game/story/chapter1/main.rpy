@@ -1,15 +1,6 @@
-# define config.default_cps = 20
-
-# 아침의 시작: 평범한 첫걸음
-label start_part_1:
-    # scene black
-    # show text _("{color=#ffffff}{size=100}DAY 1{/size}{/color}") with fade
-    # pause 2
-
+label chapter1_start:
     scene bg school_gate with fade
-
     play music "audio/bgm/walking_school.ogg"
-
     "고등학교 정문 앞, [p](은)는 멈춰 서서 학교 건물을 바라보았다."
     "학생들이 활기차게 웃고 떠들며 등교하는 모습이 보이지만, 그는 혼자 그 모습을 지켜보았다."
     "평범한 가방을 멘 [p]의 손은 약간 굳어 있었다."
@@ -18,16 +9,25 @@ label start_part_1:
     "학생들 사이로 천천히 걸음을 옮기는 [p]."
     "몇몇 학생들이 낯선 얼굴을 힐끔 쳐다보지만, [p](은)는 신경 쓰지 않으려 애썼다."
 
-    jump class_room_part_1
 
-# 교실로 들어가다
-label class_room_part_1:
+label chapter1_teacher_first_meeting:
+    # 교무실 밖
+    "잔뜩 긴장한 채로 교무실 앞에 멈춰 섰다."
+    p "괜찮아... 그냥 들어가면 돼."
+    "[p]는 스스로 다독이면서 교무실 문을 열었다."
+
+    # 교무실
+    p "실례합니다..."
+    "작게 중얼거리며 교무실 문을 조심스럽게 열었다."
+    ""
+
+
+label chapter1_classroom_start:
     scene black with fade
     window hide
     scene bg school_classroom with fade
     pause 1
 
-    # "{green}{cps=10}교실{/green}"
     stop music fadeout 1
     play music "audio/se/close_classroom.ogg"
     stop music fadeout 1
@@ -66,5 +66,3 @@ label class_room_part_1:
     "창문 밖으로 쏟아지는 햇살이 눈부시게 느껴져 잠깐 창밖을 바라보았다."
 
     p "...그냥 무난히 지내고 싶은데"
-
-    jump daeun_part_1
